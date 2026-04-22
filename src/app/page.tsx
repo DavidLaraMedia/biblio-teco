@@ -108,7 +108,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 p-8">
       <main className="max-w-3xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-slate-800">Biblioteca Teco</h1>
+          <h1 className="text-3xl font-bold text-slate-800">Biblioteca Teco v2</h1>
           <button
             onClick={() => openForm()}
             className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700"
