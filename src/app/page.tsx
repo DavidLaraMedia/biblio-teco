@@ -105,13 +105,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-100 p-8">
+    <div className="min-h-screen bg-slate-50 p-8">
       <main className="max-w-3xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-zinc-800">Biblioteca Teco</h1>
+          <h1 className="text-3xl font-bold text-slate-800">Biblioteca Teco</h1>
           <button
             onClick={() => openForm()}
-            className="px-4 py-2 bg-zinc-800 text-white rounded-lg font-medium hover:bg-zinc-700"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700"
           >
             + Nueva Nota
           </button>
@@ -124,12 +124,12 @@ export default function Home() {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Buscar en notas..."
-            className="flex-1 p-3 rounded-lg border border-zinc-300 text-lg"
+            className="flex-1 p-3 rounded-lg border border-slate-300 text-lg text-slate-800 bg-white"
           />
           <button
             onClick={search}
             disabled={loading}
-            className="px-6 py-3 bg-zinc-800 text-white rounded-lg font-medium hover:bg-zinc-700 disabled:opacity-50"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50"
           >
             {loading ? "..." : "Buscar"}
           </button>
@@ -137,19 +137,19 @@ export default function Home() {
 
         <div className="space-y-4">
           {notes.length === 0 && !loading && (
-            <p className="text-zinc-500">No se encontraron notas</p>
+            <p className="text-slate-500">No se encontraron notas</p>
           )}
 
           {notes.map((note) => (
             <div
               key={note.id}
-              className="bg-white p-4 rounded-lg shadow-sm border border-zinc-200"
+              className="bg-white p-4 rounded-lg shadow-sm border border-slate-200"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs px-2 py-1 bg-zinc-100 text-zinc-600 rounded">
+                <span className="text-xs px-2 py-1 bg-slate-100 text-slate-600 rounded">
                   {note.category}
                 </span>
-                <span className="text-xs text-zinc-400">
+                <span className="text-xs text-slate-400">
                   {new Date(note.created_at).toLocaleDateString("es-AR")}
                 </span>
                 <button
@@ -165,8 +165,8 @@ export default function Home() {
                   Eliminar
                 </button>
               </div>
-              <h3 className="font-semibold text-zinc-800 mb-2">{note.title}</h3>
-              <pre className="text-sm text-zinc-600 whitespace-pre-wrap font-mono bg-zinc-50 p-2 rounded overflow-x-auto">
+              <h3 className="font-semibold text-slate-800 mb-2">{note.title}</h3>
+              <pre className="text-sm text-slate-600 whitespace-pre-wrap font-mono bg-slate-50 p-2 rounded overflow-x-auto">
                 {note.content.slice(0, 500)}
                 {note.content.length > 500 && "..."}
               </pre>
@@ -177,7 +177,7 @@ export default function Home() {
         {showForm && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
             <div className="bg-white rounded-lg p-6 w-full max-w-lg">
-              <h2 className="text-xl font-bold mb-4">
+              <h2 className="text-xl font-bold mb-4 text-slate-800">
                 {editingNote ? "Editar Nota" : "Nueva Nota"}
               </h2>
               <input
@@ -185,19 +185,19 @@ export default function Home() {
                 value={formTitle}
                 onChange={(e) => setFormTitle(e.target.value)}
                 placeholder="Título"
-                className="w-full p-2 border border-zinc-300 rounded mb-3"
+                className="w-full p-2 border border-slate-300 rounded mb-3 text-slate-800"
               />
               <textarea
                 value={formContent}
                 onChange={(e) => setFormContent(e.target.value)}
                 placeholder="Contenido"
                 rows={6}
-                className="w-full p-2 border border-zinc-300 rounded mb-3 font-mono"
+                className="w-full p-2 border border-slate-300 rounded mb-3 font-mono text-slate-800"
               />
               <select
                 value={formCategory}
                 onChange={(e) => setFormCategory(e.target.value)}
-                className="w-full p-2 border border-zinc-300 rounded mb-4"
+                className="w-full p-2 border border-slate-300 rounded mb-4 text-slate-800"
               >
                 <option value="general">General</option>
                 <option value="daily">Daily</option>
@@ -206,13 +206,13 @@ export default function Home() {
               <div className="flex gap-2">
                 <button
                   onClick={saveNote}
-                  className="flex-1 px-4 py-2 bg-zinc-800 text-white rounded"
+                  className="flex-1 px-4 py-2 bg-blue-600 text-white rounded"
                 >
                   Guardar
                 </button>
                 <button
                   onClick={closeForm}
-                  className="px-4 py-2 border border-zinc-300 rounded"
+                  className="px-4 py-2 border border-slate-300 rounded text-slate-600"
                 >
                   Cancelar
                 </button>
