@@ -7,9 +7,9 @@ App personal de notas corporativas para consultarlo desde cualquier dispositivo.
 - [x] Next.js + TypeScript + Tailwind
 - [x] API routes para notas (/api/notes)
 - [x] Deploy en Vercel: https://biblio-teco.vercel.app/
-- [ ] Configurar Turso (SQLite cloud)
-- [ ] Importar notas desde los .txt
-- [ ] UI para agregar/editar notas
+- [x] Configurar Turso (SQLite cloud)
+- [x] Importar notas desde los .txt
+- [x] UI para agregar/editar notas
 
 ## Stack
 
